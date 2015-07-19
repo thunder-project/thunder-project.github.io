@@ -44,7 +44,9 @@
           <a class="btn btn-lg btn-white-outline" data-remote="false"
           data-target="#foo" href="http://thunder-project.org/thunder/docs">Documentation</a>
           <a class="btn btn-lg btn-white-outline" data-remote="false"
-          data-target="#foo" href="http://research.janelia.org/zebrafish">Examples</a>
+          data-target="#foo" id='notebooks'>Live notebooks</a>
+          <a class="btn btn-lg btn-white-outline" data-remote="false"
+          data-target="#foo" href="http://research.janelia.org/zebrafish">Use case</a>
         </div>
       </div>
     </div>
@@ -150,6 +152,15 @@ $ thunder
       var pageTracker = _gat._getTracker("UA-46696594-1");
     pageTracker._trackPageview();
     } catch(err) {}
+  </script>
+  <script>
+    $("#notebooks").click(function() {
+      $.ajax({type: "POST", data: JSON.stringify({"path": "/"}), 
+        url: "http://notebooks.codeneuro.org:9000/api/spawn/"})
+      .done( function(data) {
+        window.open(data.url + 'notebooks/thunder/intro.ipynb', '_self');
+      })
+    })
   </script>
 
   </body>
