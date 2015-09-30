@@ -328,9 +328,14 @@ pre code {
           font-size: 14px;
      }
 
+     pre {
+          word-wrap: break-word;
+     }
+
      pre code {
           background: transparent;
-          font-size: 8px;
+          font-size: 12px;
+          word-wrap: break-word;
      }
 
      .subtitle, .subcontent {
