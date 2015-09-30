@@ -4,6 +4,7 @@ body {
      font: 18px "Helvetica Neue", sans-serif;
      font-weight: 300;
      -webkit-font-smoothing: antialiased;
+     margin: 0px;
 }
 
 p {
@@ -16,6 +17,8 @@ a {
      -moz-transition: all .25s; 
      -webkit-transition: all .25s;
      border: 0;
+     text-decoration: none;
+     border: none;
 }
 
 h3 {
@@ -62,12 +65,18 @@ a:hover {
 
 footer {
      background-color: rgb(230,230,230);
-     border-top: 1px solid rgb(180,180,180);
      padding: 25px;
 }
 
 #builtby {
+     text-align: center;
      font-size: 15px;
+}
+
+hr {
+     border: 1px solid white;
+     opacity: 0.4;
+
 }
 
 article {
@@ -75,8 +84,10 @@ article {
 }
 
 pre {
-     border: 1px solid rgb(180,180,180);
+     border: 0px solid rgb(180,180,180);
      background-color: rgb(230,230,230);
+     padding: 10px;
+     border-radius: 5px;
 }
 
 pre code {
@@ -110,25 +121,11 @@ pre code {
      margin-top: 0px;
      line-height: 2.1428571435;
      height: 550px;
+     z-index: -1000;
+     background-color: rgb(235,139,52);
      
  }
 
-
-.jumbotron:after {
-     content:"";
-     background: url("../images/banner-full.png") left center;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
-     opacity: 1;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
-     position: absolute;
-     z-index: -1;
- }
 
 .navbar-default {
      background-color: transparent;
@@ -183,11 +180,15 @@ pre code {
 }
 
 #header {
+     position: absolute;
+     left: 40px;
+     top: 40px;
 	width: 270px;
-     margin-top: 10px;
-     margin-left: 10px;
      padding-bottom: 20px;
-     margin-right: 1000px;
+}
+
+#top {
+     background-color: rgb(235,139,52);
 }
 
 #header-container {
@@ -196,18 +197,21 @@ pre code {
 }
 
 #subheader {
-	font-size: 85px;
-     font-weight: 400;
+	font-size: 78px;
+     font-weight: 100;
      color: white;
-     font-family: 'Source Sans Pro', sans-serif;
+     font-family: 'Source sans pro', sans-serif;
+     text-align: center;
+     margin-bottom: 20px;
+     margin-top: 120px;
 }
 
 #features {
-     border-bottom: 1px solid rgb(180,180,180);
      background-color: rgb(230,230,230);
 }
 
 #getting-started {
+     border:none;
      padding-top: 40px;
      transition: all .25s; 
      -moz-transition: all .25s; 
@@ -226,33 +230,35 @@ pre code {
      color: white;
 }
 
-#subtitle1 {
-     color: rgb(58,219,123);
-}
 
-#subtitle2 {
-     color: rgb(249,168,95);
-}
-
-#subtitle3 {
-     color: rgb(190,121,209);
-}
-
-#subtitle1, #subtitle2, #subtitle3 {
+.subtitle {
      font-style: italic;
      font-weight: 700;
      margin-top: 50px;
+     color: rgb(249,168,95);
+     padding-left: 20px;
 }
 
-#subcontent {
+.subcontent {
      font-weight: 200;
      line-height: 1.3;
      margin-bottom: 80px;
+     padding-right: 20px;
+     padding-left: 20px;
 }
 
 #docsubtitle {
      font-size: 30px;
      color: white;
+}
+
+#notebooks {
+     cursor: pointer;
+}
+
+.btn {
+     padding: 15px;
+     font-size: 18px;
 }
 
 .btn-default, .btn-default > a {
@@ -299,12 +305,22 @@ pre code {
 
 
 @media (max-width: 480px) {
-     .jumbotron {
-          height: 400px;
+     
+     .btn {
+          display: inline-block;
+          font-size: 22px;
+          padding-bottom: -20px;
+     }
+
+     #header {
+          position: relative;
+          width: 200px;
+          left: 0px;
      }
 
      #subheader {
-          font-size: 35px;
+          margin-top: 40px;
+          font-size: 40px;
           text-align: center;
      }
 
@@ -314,12 +330,16 @@ pre code {
 
      pre code {
           background: transparent;
-          font-size: 12px;
+          font-size: 8px;
      }
 
-     #subtitle1, #subtitle2, #subtitle3, #subcontent {
+     .subtitle, .subcontent {
           text-align: center;
-          font-size: 18px;
+          font-size: 23px;
+     }
+
+     .subtitle {
+          padding-left: 0px;
      }
 
      #docs {
