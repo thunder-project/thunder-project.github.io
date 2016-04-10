@@ -15,13 +15,6 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
@@ -35,115 +28,34 @@
     <div class='row'>
       <div style="text-align: center" id="header-container">
         <div class="row">
-            <h1 id="subheader">Large-scale image <br>and time series analysis</h1>
+            <h1 id="subheader">scalable image <br>and time series analysis</h1>
         </div>
-        <div class='row' style='margin-bottom: 80px'>
+        <div class='row' style='margin-bottom: 30px'>
             <a class="btn btn-white-outline" data-remote="false"
-            data-target="#getting-started" href="#getting-started">Getting started</a>
+            data-target="#foo" href="http://docs.thunder-project.org">Documentation</a>
             <a class="btn btn-white-outline" data-remote="false"
-            data-target="#foo" href="http://thunder-project.org/thunder/docs">Documentation</a>
+            data-target="#foo" href="http://github.com/thunder-project">Github</a>
             <a class="btn btn-white-outline" data-remote="false"
-            data-target="#foo" href="http://github.com/thunder-project/thunder">Github</a>
+            data-target="#foo" href="https://gitter.im/thunder-project/thunder">chatroom</a>
             <a class="btn btn-white-outline" data-remote="false"
-            data-target="#foo" id='notebooks'>Live notebooks</a>
+            data-target="#foo" href='http://mybinder.org/repo/thunder-project/thunder-docs'>Live notebooks</a>
             <a class="btn btn-white-outline" data-remote="false"
             data-target="#foo" href="http://research.janelia.org/zebrafish">Use case</a>
         </div>
+        <div class="row" id="overview">
+           Thunder is a modular collection of tools for the analysis of image and time series data in Python. Supports fast and interactive analysis of small, medium, or very large datasets. Runs locally or against a Spark cluster with an identical API.
+        </div>
       </div>
     </div>
     </div>
 
-  
-  <div section id="features">
-      <div class="row">
-         <div class="column-4">
-          <h2 class='subtitle' id="subtitle1"><i class="fa fa-bolt"></i>&nbsp;&nbsp;Fast</h2>
-          <h3 class="subcontent">Lightning-fast analysis through the Spark cluster computing framework. Simple to run on a cluster with Amazon EC2.</h3>
-        </div>
-        <div class="column-4">
-          <h2 class='subtitle' id="subtitle2"><i class="fa fa-play-circle-o"></i>&nbsp;&nbsp;Easy</h2>
-          <h3 class="subcontent">Run existing analyses or develop new ones. Try locally before deploying on a cluster. All in Python.</h3>
-        </div>
-         <div class="column-4">
-          <h2 class='subtitle' id="subtitle3"><i class="fa fa-bar-chart-o"></i>&nbsp;&nbsp;&nbsp;Interactive</h2>
-          <h3 class="subcontent">Run interactively in the Jupyter notebook. Immediately inspect, visualize, and share results and analyses.</h3>
-        </div>
-      </div>
-  </div>
-
-  <div section id="getting-started">
-      <div class="row">
-        <h1>Getting started</h1>
-        <p>Most computers can get started locally or on the cloud in just a few simple steps.</p>
-        <br>
-      </div>
-      <div class="row">
-            <div class="column-4">
-              <p><b>1.</b> Download the <a href='http://d3kbcqa49mib13.cloudfront.net/spark-1.1.0-bin-hadoop1.tgz'>latest</a>, pre-built version of <b>Spark</b>. Then set an environmental variable by typing this into the terminal.</p>
-              <pre><code class="bash">export SPARK_HOME=your/path/to/spark
-</pre></code>
-            </div>
-            <div class="column-4">
-              <p><b>2.</b> Install <b>Thunder</b>. If you are already using Python just type this line into the terminal. (If not, get <a href='https://store.continuum.io/cshop/anaconda/'>Anaconda</a>.)</p>
-              <pre><code class="bash">pip install thunder-python
-</pre></code>
-            </div>
-            <div class="column-4">
-              <p><b>3.</b> Start <b>Thunder</b> and try an analysis!</p>
-              <pre><code class="bash">thunder
->> from thunder import ICA
->> data = tsc.makeExample("ica")
->> model = ICA(c=2).fit(data)
-</pre></code>
-            </div>
-          </div>
-      <br>
-      <div class="row">
-      <hr>
-      </div>
-      <br>
-      <div class="row">
-      <h3>Running locally is great for testing, but for real analysis you'll want a cluster</h3>
-      <br>
-      </div>
-      <div class="row">
-        <div class="column-2">
-          <p><b>1.</b> Set up an AWS account, get your secret access key, and create a key pair (see the <a href="http://thunder-project.github.io/thunder/install_ec2.html">documentation</a> for more details).</p>
-      </div>
-        <div class="column-5">
-          <p><b>2.</b> Use this command to launch a 5 node cluster named "test". It will just take a few minutes to start</p>
-      <pre><code class="bash">thunder-ec2 -k mykey -i mykey.pem -s 5 launch test
-</pre></code>
-      </div>
-      <div class="column-5">
-      <p><b>3.</b> Once the cluster launches, login and start</p>
-      <pre><code class="bash">thunder-ec2 -k mykey -i mykey.pem login test
-$ thunder
-</pre></code>
-    <p>Don't forget to shut down the cluster! Run the above command replacing "login" with "destroy".
-      </div>
-    </div>
-    <br>
-    <br>
-    <h2 id="want-more">Read the <a href='http://thunder-project.github.io/thunder'>documentation</a> for more info or <a href='https://github.com/thunder-project/thunder/'>fork the repo</a> and contribute!</h2>
-    <br>
-    <br>
 
 </div>
-
-    
-    
+  
   </div>
 
 
-
-  <footer>
-    <div class="row">
-      <p id="builtby">Built by <a href="https://github.com/thunder-project/thunder/graphs/contributors">contributors</a></p>
-    </div>
-  </footer>
-
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  <!--[if !IE]><script>fixScale(document);</script><![endif]-->
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -153,15 +65,6 @@ $ thunder
       var pageTracker = _gat._getTracker("UA-46696594-1");
     pageTracker._trackPageview();
     } catch(err) {}
-  </script>
-  <script>
-    $("#notebooks").click(function() {
-      $.ajax({type: "POST", data: JSON.stringify({"path": "/"}), 
-        url: "http://notebooks.codeneuro.org:9000/api/spawn/"})
-      .done( function(data) {
-        window.open(data.url + 'notebooks/thunder/intro.ipynb', '_self');
-      })
-    })
   </script>
 
   </body>

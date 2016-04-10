@@ -1,3 +1,9 @@
+@font-face{
+    font-family:"AvenirNext";
+    src:url("../fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+    src:url("../fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),url("../fonts/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),url("../fonts/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype"),url("../fonts/52a192b1-bea5-4b48-879f-107f009b666f.svg#52a192b1-bea5-4b48-879f-107f009b666f") format("svg");
+}
+
 body {
 	background-color: rgb(200,200,200);
 	color: #2d3c48;
@@ -40,8 +46,8 @@ h3 {
      -ms-transition:all .3s;
      -o-transition:all .3s;
      transition:all .3s;
-     -webkit-border-radius:6px;
-     border-radius:6px;
+     -webkit-border-radius:3px;
+     border-radius:3px;
      -webkit-background-clip:padding-box;
      background-clip:padding-box;
      font-weight:600;
@@ -188,6 +194,9 @@ pre code {
 }
 
 #top {
+     position: fixed;
+     width: 100%;
+     height: 100%;
      background-color: rgb(235,139,52);
 }
 
@@ -200,13 +209,24 @@ pre code {
 	font-size: 78px;
      font-weight: 100;
      color: white;
-     font-family: 'Source sans pro', sans-serif;
+     font-family: Abel, sans-serif;
      text-align: center;
      margin-bottom: 20px;
      margin-top: 120px;
 }
 
+#overview {
+     color: white;
+     font-family: Abel;
+     padding: 50px;
+     font-size: 36px;
+}
+
 #features {
+     position: fixed;
+     width: 100%;
+     height: 33%;
+     top: 67%;
      background-color: rgb(230,230,230);
 }
 
@@ -258,12 +278,14 @@ pre code {
 
 .btn {
      padding: 15px;
-     font-size: 18px;
+     font-size: 22px;
+     font-family: 'AvenirNext';
+     font-style: italic;
+     text-transform: lowercase;
 }
 
 .btn-default, .btn-default > a {
      font-weight: bold;
-     font-family: helvetica neue;
      background: #252525;
      color: rgb(157,204,122);
      box-shadow: inset 0 1px 3px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
@@ -320,8 +342,12 @@ pre code {
 
      #subheader {
           margin-top: 40px;
-          font-size: 40px;
+          font-size: 48px;
           text-align: center;
+     }
+
+     #overview {
+          display: none;
      }
 
      p {
